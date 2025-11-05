@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/norkart-demo/static/css/main.cd67fffc.css",
+    "main.js": "/norkart-demo/static/js/main.2fb43bc6.js",
+    "static/js/453.16b6d510.chunk.js": "/norkart-demo/static/js/453.16b6d510.chunk.js",
+    "index.html": "/norkart-demo/index.html",
+    "main.cd67fffc.css.map": "/norkart-demo/static/css/main.cd67fffc.css.map",
+    "main.2fb43bc6.js.map": "/norkart-demo/static/js/main.2fb43bc6.js.map",
+    "453.16b6d510.chunk.js.map": "/norkart-demo/static/js/453.16b6d510.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd67fffc.css",
+    "static/js/main.2fb43bc6.js"
+  ]
+}
