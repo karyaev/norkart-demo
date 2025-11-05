@@ -16,15 +16,28 @@ const MapComponent = () => {
         //legg til zoom- og rotasjonskontroller
         map.addControl(new maplibregl.NavigationControl(), "top-right");
 
-        //legg til markør midt i oslo
-        const marker = new maplibregl.Marker({ color: "#e63946" })
-            .setLngLat([10.75, 59.91])
-            .addTo(map);
+        // liste over alle byer
+        const cities = [
+            { name: "Oslo", coords: [10.75, 59.91], info: "Hovedstaden i Norge" },
+            { name: "Bergen", coords: [5.33, 60.39], info: "Byen mellom de 7 fjell" },
+            { name: "Trondheim", coords: [10.39, 63.43], info: "Kjent for Nidarosdomen" },
+            { name: "Tromsø", coords: [18.95, 69.65], info: "Nordlysens hovedstad" },
+            { name: "Stavanger", coords: [5.73, 58.97], info: "Oljehovedstaden" },
+        ];
 
-        //legg til popup som vises når du klikker på markøren
-        const popup = new maplibregl.Popup({ offset: 25 }).setText("Oslo");
+        //legg til markør for alle byene
+        cities.forEach((city) => {
+            const marker = new maplibregl.Marker({ color: "#3b82f6" })
+                .setLngLat(city.coords)
+                .addTo(map);
 
-        marker.setPopup(popup);
+            //legg til popup som vises når du klikker på markøren
+            const popup = new maplibregl.Popup({ offset: 25 }).setHTML(
+                `<strong>${city.name}</strong><br>${city.info}`
+            );
+
+            marker.setPopup(popup);
+        });
 
         return () => map.remove(); 
     }, []);
